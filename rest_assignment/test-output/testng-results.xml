@@ -1,13 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+<testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6563" started-at="2021-12-10T16:57:20 ART" finished-at="2021-12-10T16:57:26 ART">
+  <suite name="Default suite" duration-ms="38222" started-at="2021-12-10T18:47:26 ART" finished-at="2021-12-10T18:48:04 ART">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6563" started-at="2021-12-10T16:57:20 ART" finished-at="2021-12-10T16:57:26 ART">
+    <test name="Default test" duration-ms="38222" started-at="2021-12-10T18:47:26 ART" finished-at="2021-12-10T18:48:04 ART">
       <class name="money_value.ValueFinder">
-        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="4366" started-at="2021-12-10T16:57:20 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:24 ART">
+        <test-method status="PASS" signature="prepTests()[pri:0, instance:money_value.ValueFinder@696da30b]" name="prepTests" is-config="true" duration-ms="738" started-at="2021-12-10T18:47:26 ART" finished-at="2021-12-10T18:47:27 ART">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- prepTests -->
+        <test-method status="PASS" signature="retrieveBank(money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBank" duration-ms="6211" started-at="2021-12-10T18:47:27 ART" data-provider="bank" finished-at="2021-12-10T18:47:33 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bbva]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBank -->
+        <test-method status="PASS" signature="retrieveBank(money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBank" duration-ms="1139" started-at="2021-12-10T18:47:33 ART" data-provider="bank" finished-at="2021-12-10T18:47:34 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bancor]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBank -->
+        <test-method status="PASS" signature="retrieveBank(money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBank" duration-ms="1098" started-at="2021-12-10T18:47:34 ART" data-provider="bank" finished-at="2021-12-10T18:47:35 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[bind]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBank -->
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBankAndCoin" duration-ms="1135" started-at="2021-12-10T18:47:35 ART" data-provider="bankAndCoin" finished-at="2021-12-10T18:47:36 ART">
           <params>
             <param index="0">
               <value>
@@ -23,7 +60,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- retrieveBankAndCoin -->
-        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1032" started-at="2021-12-10T16:57:24 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:25 ART">
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBankAndCoin" duration-ms="1014" started-at="2021-12-10T18:47:36 ART" data-provider="bankAndCoin" finished-at="2021-12-10T18:47:37 ART">
           <params>
             <param index="0">
               <value>
@@ -39,7 +76,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- retrieveBankAndCoin -->
-        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1081" started-at="2021-12-10T16:57:25 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveBankAndCoin" duration-ms="1004" started-at="2021-12-10T18:47:37 ART" data-provider="bankAndCoin" finished-at="2021-12-10T18:47:38 ART">
           <params>
             <param index="0">
               <value>
@@ -55,38 +92,39 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- retrieveBankAndCoin -->
-        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1" started-at="2021-12-10T16:57:26 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+        <test-method status="PASS" signature="retrieveCoin(money_value.Coin)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveCoin" duration-ms="15777" started-at="2021-12-10T18:47:38 ART" data-provider="coin" finished-at="2021-12-10T18:47:54 ART">
           <params>
             <param index="0">
               <value>
-                <![CDATA[real]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[mayorista]]>
+                <![CDATA[dollar]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- retrieveBankAndCoin -->
-        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1" started-at="2021-12-10T16:57:26 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+        </test-method> <!-- retrieveCoin -->
+        <test-method status="PASS" signature="retrieveCoin(money_value.Coin)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveCoin" duration-ms="6768" started-at="2021-12-10T18:47:54 ART" data-provider="coin" finished-at="2021-12-10T18:48:01 ART">
           <params>
             <param index="0">
               <value>
                 <![CDATA[euro]]>
               </value>
             </param>
-            <param index="1">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveCoin -->
+        <test-method status="PASS" signature="retrieveCoin(money_value.Coin)[pri:0, instance:money_value.ValueFinder@696da30b]" name="retrieveCoin" duration-ms="3244" started-at="2021-12-10T18:48:01 ART" data-provider="coin" finished-at="2021-12-10T18:48:04 ART">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[comafi]]>
+                <![CDATA[real]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- retrieveBankAndCoin -->
+        </test-method> <!-- retrieveCoin -->
       </class> <!-- money_value.ValueFinder -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
