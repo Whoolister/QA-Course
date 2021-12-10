@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="6563" started-at="2021-12-10T16:57:20 ART" finished-at="2021-12-10T16:57:26 ART">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="6563" started-at="2021-12-10T16:57:20 ART" finished-at="2021-12-10T16:57:26 ART">
+      <class name="money_value.ValueFinder">
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="4366" started-at="2021-12-10T16:57:20 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:24 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[dollar]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[bbva]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBankAndCoin -->
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1032" started-at="2021-12-10T16:57:24 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:25 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[euro]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[galicia]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBankAndCoin -->
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1081" started-at="2021-12-10T16:57:25 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[nacion]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBankAndCoin -->
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1" started-at="2021-12-10T16:57:26 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[real]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[mayorista]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBankAndCoin -->
+        <test-method status="PASS" signature="retrieveBankAndCoin(money_value.Coin,money_value.Bank)[pri:0, instance:money_value.ValueFinder@574b560f]" name="retrieveBankAndCoin" duration-ms="1" started-at="2021-12-10T16:57:26 ART" data-provider="bankAndCoin" finished-at="2021-12-10T16:57:26 ART">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[euro]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[comafi]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- retrieveBankAndCoin -->
+      </class> <!-- money_value.ValueFinder -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
