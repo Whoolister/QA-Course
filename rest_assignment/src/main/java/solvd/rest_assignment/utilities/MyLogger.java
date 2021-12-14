@@ -1,4 +1,4 @@
-package utilities;
+package solvd.rest_assignment.utilities;
 
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
