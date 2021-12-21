@@ -1,18 +1,23 @@
-package money_value;
+package solvd.rest_assignment.money_value;
 
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.restassured.RestAssured;
-import utilities.MyLogger;
+import io.restassured.config.ObjectMapperConfig;
+import io.restassured.mapper.ObjectMapperType;
+import io.restassured.specification.RequestSpecification;
+import solvd.rest_assignment.utilities.MyLogger;
 
 public class ValueFinder {
 	public static final MyLogger LOG = new MyLogger(ValueFinder.class.getName());
+	public static final RequestSpecification specification = RestAssured.given();
 
 	@BeforeClass
 	public void prepTests() {
-		RestAssured.baseURI = "https://api-dolar-argentina.herokuapp.com/api";
+		specification.baseUri("https://api-dolar-argentina.herokuapp.com/api");
+		specification.config(RestAssured.config().objectMapperConfig(new ObjectMapperConfig(ObjectMapperType.GSON)));
 	}
 
 	@DataProvider(name = "bankAndCoin")
@@ -21,56 +26,64 @@ public class ValueFinder {
 	}
 
 	@DataProvider(name = "bank")
-	public Object[] provideBank() {
-		return new Object[] { Bank.BBVA, Bank.BANCOR, Bank.BIND };
+	public Object[][] provideBank() {
+		return new Object[][] { { Bank.BBVA }, { Bank.BANCOR }, { Bank.BIND } };
 	}
 
 	@DataProvider(name = "coin")
-	public Object[] provideCoin() {
-		return new Object[] { Coin.DOLLAR, Coin.EURO, Coin.REAL };
+	public Object[][] provideCoin() {
+		return new Object[][] { { Coin.DOLLAR }, { Coin.EURO }, { Coin.REAL } };
 	}
 
 	@Test(dataProvider = "bankAndCoin")
 	public void retrieveBankAndCoin(Coin coin, Bank bank) {
-		LOG.info(coin.name() + " at bank: " + bank.name());
-
+		Value value = null;
 		if (coin == Coin.DOLLAR) {
-			LOG.info(RestAssured.get("/" + bank.toString()).getBody().asString() + System.lineSeparator());
-		} else if (coin == Coin.EURO || coin == Coin.REAL) {
-			if (bank.supports(coin)) {
-				LOG.info(RestAssured.get("/" + coin.toString() + "/" + bank.toString()).getBody().asString()
-						+ System.lineSeparator());
-			} else {
-				LOG.info("THIS COIN ISN'T SUPPORTED BY THIS BANK/PROVIDER" + System.lineSeparator());
-			}
+			value = retrieveValue(bank);
+		} else if (bank.supports(coin)) {
+			value = retrieveValue(coin, bank);
+		} else {
+			LOG.info("THIS COIN ISN'T SUPPORTED BY THIS BANK/PROVIDER" + System.lineSeparator());
 		}
+		LOG.info(value.toString());
 	}
 
 	@Test(dataProvider = "bank")
 	public void retrieveBank(Bank bank) {
+		Value value = null;
 		for (Coin coin : Coin.values()) {
 			if (coin == Coin.DOLLAR) {
-				LOG.info(coin.name() + " at bank: " + bank.name() + System.lineSeparator()
-						+ RestAssured.get("/" + bank.toString()).getBody().asString() + System.lineSeparator());
+				value = retrieveValue(bank);
 			} else if (bank.supports(coin)) {
-				LOG.info(coin.name() + " at bank: " + bank.name() + System.lineSeparator()
-						+ RestAssured.get("/" + coin.toString() + "/" + bank.toString()).getBody().asString()
-						+ System.lineSeparator());
+				value = retrieveValue(coin, bank);
 			}
 		}
+		LOG.info(value.toString());
 	}
 
 	@Test(dataProvider = "coin")
 	public void retrieveCoin(Coin coin) {
+		Value value = null;
 		for (Bank bank : Bank.values()) {
 			if (coin == Coin.DOLLAR) {
-				LOG.info(coin.name() + " at bank: " + bank.name() + System.lineSeparator()
-						+ RestAssured.get("/" + bank.toString()).getBody().asString() + System.lineSeparator());
+				value = retrieveValue(bank);
 			} else if (bank.supports(coin)) {
-				LOG.info(coin.name() + " at bank: " + bank.name() + System.lineSeparator()
-						+ RestAssured.get("/" + coin.toString() + "/" + bank.toString()).getBody().asString()
-						+ System.lineSeparator());
+				value = retrieveValue(coin, bank);
 			}
 		}
+		LOG.info(value.toString());
+	}
+
+	public static Value retrieveValue(Coin coin, Bank bank) {
+		if (coin == Coin.DOLLAR) {
+			return RestAssured.given().spec(specification).get("/" + bank).getBody().as(Value.class);
+		} else if (bank.supports(coin)) {
+			return RestAssured.given().spec(specification).get("/" + bank + "/" + coin).getBody().as(Value.class);
+		}
+		return null;
+	}
+
+	public static Value retrieveValue(Bank bank) {
+		return RestAssured.given().spec(specification).log().all().get("/" + bank).getBody().as(Value.class);
 	}
 }
