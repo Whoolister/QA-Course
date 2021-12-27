@@ -1,4 +1,4 @@
-package solvd.rest_assignment.money_value;
+package solvd.rest_assignment.apirest;
 
 public enum Coin {
 	DOLLAR, EURO, REAL;

@@ -1,4 +1,4 @@
-package solvd.rest_assignment.money_value;
+package solvd.rest_assignment.apirest;
 
 public enum Bank {
 	BBVA(Coin.DOLLAR, Coin.EURO, Coin.REAL), PIANO(Coin.DOLLAR), HIPOTECARIO(Coin.DOLLAR, Coin.EURO),
